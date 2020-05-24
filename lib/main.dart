@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:templates/LandingpageforAgency.dart';
-import 'package:templates/app_theme.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:neumorphic/neumorphic.dart';
+
 void main() {
-  runApp(LandingpageforAgency());
+  runApp(MyApp());
 }
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Home',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        textTheme: AppTheme.textTheme,
-      ),
       initialRoute: '/',
       routes: {
-        '/': (context) => LandingpageforAgency(),
+        '/': (context) => Home(),
       },
     );
   }
@@ -32,15 +28,10 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     appBar: AppBar(
+     appBar: NeuAppBar(
        title: Text(
          'Home',
-         style: TextStyle(
-           fontSize: 22,
-           color: AppTheme.darkText,
-         ),),
-       centerTitle: true,
-       backgroundColor: AppTheme.nearlyWhite,
+         ),
 
      ),
      body: Row(
